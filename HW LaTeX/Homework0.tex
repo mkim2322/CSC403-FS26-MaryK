@@ -1,0 +1,85 @@
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+
+
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\class}{Research in CompMath} 
+\newcommand{\examnum}{Homework 0} 
+\newcommand{\examdate}{8/30/2026}
+\newcommand{\timelimit}{}
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \textit{Mary Kim}\\ 
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% -------
+
+\begin{enumerate}
+\item 
+
+\begin {enumerate}
+\item Factor $2^{15} - 1 = 32,767$ into a product of two smaller positive integers.
+
+$2^{15}-1\ =\ \left(2^{5}-1\right)\left(1+2^{b}+2^{2b}+...+2^{\left(a-1\right)b}\right)$
+
+set $b = 5, a = 3$
+
+$=\ \left(2^{5}-1\right)\left(1+2^{5}+2^{2(5)}+...+2^{\left(3-1\right)5}\right)$
+
+$=\left(2^{5}-1\right)\left(\sum_{n=0}^{2}2^{5n}\right)$
+
+$=31 \times 1057$
+
+\item Find an integer $x$ such that $1 < x < 2^{32,767} - 1$ and $2^{32,767} - 1$ is divisible by $x$.  
+
+
+$2^{32767}-1\ =\ \left(2^{31}-1\right)\left(1+2^{31}+2^{62}+...+2^{\left(1056\right)\left(31\right)}\right)$
+
+This makes $2^{32767}-1$ a factor of $2^{17}-1$, making x = $2^{31}-1 = 2,147,483,647$.
+\end {enumerate}
+
+
+
+\item Make some conjectures about the values of $n$ for which $n - 1$ is prime or the values of $n$ for which $3n - 2n$ is prime.
+
+\\ For all values of $un$, where $n > 1, 3^{n} - 1$ is always even and divisible by 2 and not prime. 
+\\ For all even $n$ values for $3^{n} - 2^{n}$, the result is always not prime.
+\\Therefore, if $3^{n} - 2^{n}$ is prime, then $n$ must be odd.
+
+\item Yet another item. 
+\item 
+
+\item Lists within lists! \begin{enumerate}
+\item ha-HA!
+\item see?
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+Look Math! $f(x)=4x^2 - \frac{3}{4}x +1$ %use the dollar signs to go into math mode
+
+
+\end{document}
