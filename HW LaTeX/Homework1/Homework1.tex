@@ -1,0 +1,300 @@
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\class}{Research in CompMath} 
+\newcommand{\examnum}{Homework 1} 
+\newcommand{\examdate}{9/14/2026}
+\newcommand{\timelimit}{}
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \textit{Mary Kim}\\ 
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% -------
+
+1.1 Exercises
+
+\begin{enumerate} [listparindent=1.5em]
+
+\item $\#2$ Analyze the logical forms of the following statements:
+\begin{enumerate}
+\item Either John and Bill are both telling the truth, or neither of them is.
+
+P: John is telling the truth.
+
+Q: Bill is telling the truth.
+
+$(P \land Q) \lor (\lnot P \land \lnot Q)$
+
+\item I’ll have either fish or chicken, but I won’t have both fish and mashed
+potatoes.
+
+P: I’ll have fish.
+
+Q: I’ll have chicken.
+
+R: I’ll have mashed potatoes.
+
+$(P \lor Q) \land \lnot (P \land R)$
+
+\item 3 is a common divisor of 6, 9, and 15.
+
+$6, 9, 15 \in \{ x\  |\ x \ mod \ 3 = 0 \}$
+\end{enumerate}
+
+\item $\#5$ Which of the following expressions are well-formed formulas?
+
+A and C are correct (the same), as they follow the grammar and syntax rules of the logical language. B is not a well-formed formula because it has commas inside. D is not a well-formed formula because it does not have a union or disjoint operator between the two sets.
+
+\item $\#8$ Let T stand for the statement “Taxes will go up” and D for “The
+deficit will go up.” What English sentences are represented by the
+following formulas?
+
+\begin{enumerate} 
+\item $T \lor D.$
+
+Taxes will go up or the deficit will go up.
+
+\item $\lnot(T \land D) \land \lnot(\lnot T \land \lnot D).$
+
+Neither will both the taxes and deficits go up nor will the deficit go up if the taxes do not go up.
+
+\item $(T \land \lnot D) \lor (D \land \lnot T).$
+
+Either the taxes will go up and the deficit will not go up, or the deficit will go up and the taxes won't go up.
+\end{enumerate}
+
+\item $\#9$ Identify the premises and conclusions of the following deductive
+arguments and analyze their logical forms. Do you think the reasoning
+is valid?
+
+\begin {enumerate} 
+
+\item .
+\item The main course will be either beef or fish. The vegetable will be
+either peas or corn. We will not have both fish as a main course and
+corn as a vegetable. Therefore, we will not have both beef as a main
+course and peas as a vegetable.
+
+Premise: $B \lor F, P\lor C, \lnot (F \land C)$ The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course and corn as a vegetable.
+
+Conclusion: $\lnot (B \land P)$ Therefore, we will not have both beef as a main course and peas as a vegetable.
+
+This is not a valid conclusion because it is possible to have both beef as a main course and peas as a vegetable. The premises are not limited to two meals, and the reader does not know how many total meals there are. 
+
+\item Either John or Bill is telling the truth. Either Sam or Bill is lying.
+Therefore, either John is telling the truth or Sam is lying.
+
+Premise: $J \lor B, \lnot S \lor \lnot B$ Either John or Bill is telling the truth. Either Sam or Bill is lying.
+
+Conclusion: $J \lor \lnot S$ Therefore, either John is telling the truth or Sam is lying.
+
+This is a valid conclusion because if John is telling the truth, then the first premise is satisfied. If Bill is telling the truth, then Sam must be lying to satisfy the second premise, which means the conclusion is also satisfied.
+\end {enumerate}
+\end{enumerate}
+\ 
+
+1.2 Exercises 2, 3, 4, 6, 8
+\begin {enumerate} [listparindent=1.5em]
+\item $\#2$ Make truth tables for the following formulas:
+\begin {enumerate} 
+\item $\neg [P \land (Q \lor \neg P)]$
+
+\begin{tabular}{c c|c|c|c|c}
+$P$ & $Q$ & $\neg P$ & $Q \lor \neg P$ & $P \land (Q \lor \neg P)$ & $\neg [P \land (Q \lor \neg P)]$ \\
+\hline
+T & T & F & T & T & F \\
+T & F & F & F & F & T \\
+F & T & T & T & F & T \\
+F & F & T & T & F & T
+\end{tabular}
+
+\vspace{1cm}
+
+\item $(P \lor Q) \land (\neg P \lor R)$
+
+
+\begin{tabular}{c c c|c|c|c|c}
+$P$ & $Q$ & $R$ & $\neg P$ & $P \lor Q$ & $\neg P \lor R$ & $(P \lor Q) \land (\neg P \lor R)$ \\
+\hline
+T & T & T & F & T & T & T \\
+T & T & F & F & T & F & F \\
+T & F & T & F & T & T & T \\
+T & F & F & F & T & F & F \\
+F & T & T & T & T & T & T \\
+F & T & F & T & T & T & T \\
+F & F & T & T & F & T & F \\
+F & F & F & T & F & T & F
+\end{tabular}
+
+\end{enumerate}
+
+\item $\#3$ In this exercise we will use the symbol + to mean exclusive or. In
+other words, P + Q means “P or Q, but not both.”
+\begin {enumerate} 
+\item Make a truth table for P + Q.
+
+a) $P + Q$
+
+\begin{tabular}{c c|c}
+$P$ & $Q$ & $P + Q$ \\
+\hline
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & F
+\end{tabular}
+
+\vspace{1cm}
+\item Find a formula using only the connectives $\land, \lor, and \lnot$ that is
+equivalent to P + Q. Justify your answer with a truth table.
+
+b) $(P \lor Q) \land \neg (P \land Q)$
+
+\begin{tabular}{c c|c|c|c}
+$P$ & $Q$ & $\neg (P \land Q)$ & $P \lor Q$ & $(P \lor Q) \land \neg (P \land Q)$ \\
+\hline
+T & T & F & T & F \\
+T & F & T & T & T \\
+F & T & T & T & T \\
+F & F & T & F & F
+\end{tabular}
+
+\end {enumerate}
+
+\item $\#4$ Find a formula using only the connectives $\land$ and $\lnot$ that is equivalent
+to P $\lor$ Q. Justify your answer with a truth table.
+
+\begin{tabular}{c c|c|c|c|c|c}
+$P$ & $Q$ & $\neg (P \land Q)$ & $\neg (P \land Q)$ & $(\lnot P \land \lnot Q$ & $\lnot (\lnot P \land \lnot Q)$ & $\lnot(\lnot P \land \lnot Q) \land (\lnot P \land \lnot Q)$ \\
+\hline
+T & T & F & T & F & F & F \\
+T & F & T & T & T & T & T \\
+F & T & T & T & T & T & T \\
+F & F & T & F & F & T & F \\
+\end{tabular}
+
+\item $\#6$ Some mathematicians write P|Q to mean “P and Q are not both
+true.” (This connective is called nand, and is used in the study of
+circuits in computer science.)
+\begin {enumerate} 
+\item Make a truth table for P|Q.
+
+\begin{tabular}{c c|c}
+$P$ & $Q$ & $P | Q$ \\
+\hline
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & T
+\end{tabular}
+
+\item Find a formula using only the connectives $\land, \lor, and \lnot$ that is
+equivalent to P | Q.
+
+$(P \lor Q) \land (\lnot P \lor \lnot Q)$
+
+
+\item Find formulas using only the connective | that are equivalent to $\lnot P, P
+\lor Q, and P \land Q.$
+
+\end {enumerate}
+
+\item $\#8$ Use truth tables to determine which of the following formulas are
+equivalent to each other:
+\begin {enumerate} 
+\item $(P \land Q) \lor (\lnot P \land \lnot Q)$.
+\item $\lnot P \lor Q$.
+\item $(P \lor \lnot Q) \land (Q \lor \lnot P)$.
+\item $\lnot (P \lor Q)$.
+\item $(Q \land P) \lor \lnot P$.
+
+
+\subsection*{A. $(P \land Q) \lor (\neg P \land \neg Q)$}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & $(P \land Q) \lor (\neg P \land \neg Q)$ \\
+\midrule
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\bottomrule
+\end{tabular}
+
+\subsection*{B. $\neg P \lor Q$}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & $\neg P \lor Q$ \\
+\midrule
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\bottomrule
+\end{tabular}
+
+\subsection*{C. $(P \lor \neg Q) \land (Q \lor \neg P)$}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & $(P \lor \neg Q) \land (Q \lor \neg P)$ \\
+\midrule
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\bottomrule
+\end{tabular}
+
+\subsection*{D. $\neg(P \lor Q)$}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & $\neg(P \lor Q)$ \\
+\midrule
+T & T & F \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\bottomrule
+\end{tabular}
+
+\subsection*{E. $(Q \land P) \lor \neg P$}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & $(Q \land P) \lor \neg P$ \\
+\midrule
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\bottomrule
+\end{tabular}
+
+This indicates that A and C are equivalent, B and E are equivalent, and D is not equivalent to any of the others.
+\end {enumerate}
+\end {enumerate}
+\end{document}
