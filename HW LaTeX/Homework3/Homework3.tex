@@ -1,0 +1,78 @@
+\documentclass[12pt]{exam}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+
+
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+% Uncomment if your compiler has shell-escape enabled:
+% \tikzexternalize
+
+\newcommand{\class}{Research in CompMath} 
+\newcommand{\examnum}{Homework 3} 
+\newcommand{\examdate}{10/10/2026}
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \textit{Mary Kim}\\ 
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% -------
+
+4.1, 4.3, 4.5, 4.7, 4.9, 4.13, 4.15, 4.17 
+
+\bf 4.1 Show by induction that $2^n < n!$ for all $n \ge 4$.
+\normalfont
+\\For the base statement, n = 4, the statement that $2^4 < (4)!$ holds true as it boils down to $16 < 24$. 
+\\An inductive proof for this could be shown below
+\\$2^{n+1} < (n+1)!$ which can be rewritten as $2(2^n) < (n+1)!$
+\\Since $n > 4$, then $n + 1 > 5$, which means that $n + 1 > 2$ also hold true, multiplying $n!$ results in: $2n! < (n+1)n!$
+\\If you multiply the induction hypothesis ($2^n < n!$) by 2, you get: 
+\\$2(2^n) < 2n!$
+\\Then combining the above inequalities yields:
+\\$2^{n+1} < 2n! < (n+1)!$
+\\This proves that $2^n < n!$ holds for n+1. \hfill $\square$
+
+\bf 4.3 Show by induction that $f_0 + ... + f_n = f_{n+2} - 1$ in the Fibonacci sequence. 
+\normalfont
+\\First, proving the base case: 
+\\For $n=0$, $f_n = 1$ so $f_{n+2} - 1 = 2-1 = 1$ This proves the base case. 
+\\Now, assuming that n is true:
+\\$f_n = f_{n+1} - 1$
+\\Finally, the inductive step:
+\\ 
+\\so $f_{n+1} = f_{n+2} - 1$
+
+\bf 4.5 Consider an alternative Fibonacci sequence, starting with 0, 2. Can you prove the analogue of theorem 25? Generalize the result as far as you can. 
+
+\bf 4.7 Show by induction that a finite set with n elements has exactly $2^n$ many subsets. 
+
+\bf 4.9 Prove that $\frac{1}{1*2} + \frac{1}{2*3} + \frac{1}{3*4} + ... + \frac{n}{n*n+1} = \frac{n}{n+1}$.
+
+\bf 4.13 True or false: every flying polka-dotted elephant in this room is smoking a cigar. 
+
+\bf Criticize the following ``proof.'' 
+
+\textit{Claim.} $\sum_{i=1}^{\infty} \frac{1}{i} < \infty$. 
+
+\textit{Proof.} Let $S(n) = \sum_{i=1}^{n} \frac{1}{i}$, and consider the statement asserting $S(n) < \infty$. This statement is true for $n = 1$, since $\frac{1}{1} = 1 < \infty$. And if it is true for $n$, then it is true for $n + 1$, since the next sum $S(n + 1) = \sum_{i=1}^{n+1} \frac{1}{i}$ is equal to the previous sum $\sum_{i=1}^{n} \frac{1}{i}$ plus the next term $\frac{1}{n+1}$, or in other words, $S(n + 1) = S(n) + \frac{1}{n+1}$, and this is the sum of two finite numbers. So $S(1)$ is true, and $S(n)$ implies $S(n + 1)$. So we have therefore proved $\sum_{i=1}^{\infty} \frac{1}{i} < \infty$ by induction. \hfill $\square$
+
+\bf 4.17 Prove that the least-number principle, the common induction principle, and the strong induction principle are all equivalent. Assuming any one of them, you can prove the others. 
+\end{document}
