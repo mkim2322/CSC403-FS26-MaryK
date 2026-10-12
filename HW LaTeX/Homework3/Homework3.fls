@@ -426,7 +426,8 @@ INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTB-tlf-ot1.tfm
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTI-tlf-ot1.tfm
-INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTBI-tlf-ot1.tfm
+INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-ot1.tfm
+INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-ot1.tfm
 OUTPUT Homework3.pdf
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinLibertineTB-tlf-ot1.vf
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTB-tlf-ot1--base.tfm
@@ -438,6 +439,7 @@ INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\libertine\lbt
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinLibertineT-tlf-ot1.vf
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-ot1--base.tfm
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\libertine\lbtn_oexx6f.enc
+INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTBI-tlf-ot1.tfm
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinLibertineTBI-tlf-ot1.vf
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineTBI-tlf-ot1--base.tfm
 INPUT C:\Users\marym\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\libertine\lbtn_ks2ukx.enc

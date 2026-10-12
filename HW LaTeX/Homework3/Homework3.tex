@@ -49,24 +49,102 @@
 \\Then combining the above inequalities yields:
 \\$2^{n+1} < 2n! < (n+1)!$
 \\This proves that $2^n < n!$ holds for n+1. \hfill $\square$
+\\
 
 \bf 4.3 Show by induction that $f_0 + ... + f_n = f_{n+2} - 1$ in the Fibonacci sequence. 
 \normalfont
 \\First, proving the base case: 
 \\For $n=0$, $f_n = 1$ so $f_{n+2} - 1 = 2-1 = 1$ This proves the base case. 
 \\Now, assuming that n is true:
-\\$f_n = f_{n+1} - 1$
+\\$\sum_{x=0}^{n} f_x = f_{n+2} - 1$
 \\Finally, the inductive step:
-\\ 
 \\so $f_{n+1} = f_{n+2} - 1$
 
+$\sum_{x=0}^{n+1} f_x = f_{(n+1)+2} - 1 = f_{n+3} - 1$.
+
+$\sum_{x=0}^{n+1} f_x = \left(\sum_{x=0}^{n} f_x\right) + f_{n+1}$
+\\Using the induction hypothesis, the first part can be rewritten as:
+$\sum_{x=0}^{n+1} f_x = (f_{n+2} - 1) + f_{n+1} = (f_{n+2} + f_{n+1}) - 1$
+\\Combining all of these here, $f_{n+2} + f_{n+1} = f_{n+3}$ so,
+\\$\sum_{x=0}^{n+1} f_x = f_{n+3} - 1$.
+\\
+
 \bf 4.5 Consider an alternative Fibonacci sequence, starting with 0, 2. Can you prove the analogue of theorem 25? Generalize the result as far as you can. 
+\normalfont
+
+\textbf{Theorem 25.} For the standard Fibonacci sequence with $f_0 = 0$, $f_1 = 1$, and $f_{n+1} = f_n + f_{n-1}$ for $n \ge 1$, and for all integers $n \ge 0$,
+$\sum_{x=0}^{n} f_x^2 = f_n f_{n+1}$.
+
+\textbf{Generalization.} Let $f_n$ be any sequence satisfying $f_{n+1} = f_n + f_{n-1}$ for $n \ge 1$ with initial terms $f_0, f_1$. Then for all $n \ge 0$,
+$\sum_{x=0}^{n} f_x^2 = f_n f_{n+1} - f_0(f_1 - f_0)$.
+
+\textbf{Proof.} We proceed by mathematical induction on $n$.
+
+\textbf{Base Case ($n = 0$):}
+$\text{LHS} = \sum_{x=0}^{0} f_x^2 = f_0^2$
+
+$\text{RHS} = f_0 f_1 - f_0(f_1 - f_0) = f_0 f_1 - f_0 f_1 + f_0^2 = f_0^2$
+
+Since $\text{LHS} = \text{RHS}$, the base case holds.
+
+\textbf{Inductive Hypothesis:}
+Assume the formula holds for an arbitrary integer $n \ge 0$:
+$\sum_{x=0}^{n} f_x^2 = f_n f_{n+1} - f_0(f_1 - f_0)$.
+
+\textbf{Inductive Step:}
+We want to show that the formula holds for $n + 1$:
+$\sum_{x=0}^{n+1} f_x^2 = f_{n+1} f_{n+2} - f_0(f_1 - f_0)$.
+
+Starting from the left-hand side:
+$\sum_{x=0}^{n+1} f_x^2 = \left( \sum_{x=0}^{n} f_x^2 \right) + f_{n+1}^2$
+
+Applying the inductive hypothesis:
+$\sum_{x=0}^{n+1} f_x^2 = \big( f_n f_{n+1} - f_0(f_1 - f_0) \big) + f_{n+1}^2$
+
+Group the terms with $f_{n+1}$:
+$\sum_{x=0}^{n+1} f_x^2 = (f_n f_{n+1} + f_{n+1}^2) - f_0(f_1 - f_0)$
+
+Factor out $f_{n+1}$:
+$\sum_{x=0}^{n+1} f_x^2 = f_{n+1}(f_n + f_{n+1}) - f_0(f_1 - f_0)$
+
+Since $f_n + f_{n+1} = f_{n+2}$ by definition:
+$\sum_{x=0}^{n+1} f_x^2 = f_{n+1} f_{n+2} - f_0(f_1 - f_0)$.
+\\
 
 \bf 4.7 Show by induction that a finite set with n elements has exactly $2^n$ many subsets. 
+\normalfont
+
+\textbf{Proposition.} A finite set with $n$ elements has exactly $2^n$ subsets for all integers $n \ge 0$.
+
+\textbf{Proof.} We proceed by mathematical induction on $n$.
+
+\textbf{Base Case ($n = 0$):}
+A set with $0$ elements is the empty set, $\emptyset$. The only subset of $\emptyset$ is $\emptyset$ itself, which means it has $1$ subset. Since $2^0 = 1$, the base case holds.
+
+\textbf{Inductive Hypothesis:}
+Assume that any finite set with $n$ elements has exactly $2^n$ subsets for some integer $n \ge 0$.
+
+\textbf{Inductive Step:}
+Let $S$ be a set with $n + 1$ elements. Choose an element $a \in S$, and define the set $S' = S \setminus \{a\}$.
+
+The set $S'$ contains $n$ elements. By the inductive hypothesis, $S'$ has $2^n$ subsets.
+
+We can partition all subsets of $S$ into two disjoint categories:
+\\1. Subsets that do not contain $a$: These are precisely the subsets of $S'$, so there are $2^n$ such subsets.
+\\2. Subsets that contain $a$: Each of these subsets is uniquely formed by taking a subset $T \subseteq S'$ and forming $T \cup \{a\}$. Thus, there are also $2^n$ such subsets.
+
+Summing the two categories gives the total number of subsets of $S$:
+$2^n + 2^n = 2 \cdot 2^n = 2^{n+1}$.
+\\
 
 \bf 4.9 Prove that $\frac{1}{1*2} + \frac{1}{2*3} + \frac{1}{3*4} + ... + \frac{n}{n*n+1} = \frac{n}{n+1}$.
+\normalfont
+Base case:
+$\sum_{x=1}^{n+1} f_x = (f_{n+2} - 1) + f_{n+1} = (f_{n+2} + f_{n+1}) - 1$
 
 \bf 4.13 True or false: every flying polka-dotted elephant in this room is smoking a cigar. 
+\normalfont 
+True! This holds true even though there isn't a polka-dotted elephant in the room, if there were, we don't know if the elephant would be smoking a cigar or not. 
 
 \bf Criticize the following ``proof.'' 
 

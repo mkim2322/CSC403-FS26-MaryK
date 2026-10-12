@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1791687260.87567 "c:/Users/marym/CompMath/Agda/MAlonzo/Code/HW LaTeX/Homework3/Homework3.tex" "Homework3.pdf" "Homework3" 1791687263.14316 0
+["pdflatex"] 1791774377.14267 "c:/Users/marym/CompMath/Agda/MAlonzo/Code/HW LaTeX/Homework3/Homework3.tex" "Homework3.pdf" "Homework3" 1791774379.46888 0
   "C:/Users/marym/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1788400399 132209 0fb36200973000933e455270a86542c1 ""
   "C:/Users/marym/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1787276070 13367606 189c02dda16716ef157921888f94867b ""
   "C:/Users/marym/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_kijugd.enc" 1497089888 2822 11e839d2bbb939844844619b2cff7df6 ""
@@ -220,9 +220,9 @@
   "C:/Users/marym/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/marym/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/marym/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Homework3.aux" 1791687262 329 cfca87d27653727961d59512c05144d8 "pdflatex"
-  "Homework3.tex" 1791687259 3422 a8af62afce2dfbd7a6ab5cbcb3b80031 ""
-  "c:/Users/marym/CompMath/Agda/MAlonzo/Code/HW LaTeX/Homework3/Homework3.tex" 1791687259 3422 a8af62afce2dfbd7a6ab5cbcb3b80031 ""
+  "Homework3.aux" 1791774379 329 54a089244f13493d73e19024d03ef2ff "pdflatex"
+  "Homework3.tex" 1791774376 6895 a166d772537755e7368e34bca02eacc5 ""
+  "c:/Users/marym/CompMath/Agda/MAlonzo/Code/HW LaTeX/Homework3/Homework3.tex" 1791774376 6895 a166d772537755e7368e34bca02eacc5 ""
   (generated)
   "Homework3.aux"
   "Homework3.log"
