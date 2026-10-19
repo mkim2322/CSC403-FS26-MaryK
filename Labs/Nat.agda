@@ -124,7 +124,7 @@ add-succ (S x) y = cong S (add-succ x y)
 -- You will need to use sym, trans, and cong from the Equality.agda file
 add-comm : (x y : Nat) → x + y ≡ y + x 
 add-comm Z y = sym (add-zero y)
-add-comm (S x) y = trans (cong succ (add-comm x y)) (sym (add-succ y x))
+add-comm (S x) y = trans (cong S (add-comm x y)) (sym (add-succ y x))
 
 -- Addition is Associative 
 -- Pattern match on x and then use recursion 
@@ -137,4 +137,3 @@ add-assoc (S x) y z = cong succ (add-assoc x y z)
 add-right-comm : (x y z : Nat) → (x + y) + z ≡ (x + z) + y 
 add-right-comm Z y z = sym (add-comm z y)
 add-right-comm (S x) y z = cong succ (add-right-comm x y z)
-
