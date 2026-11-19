@@ -20,7 +20,7 @@ module Nat-Monus where
 
 open import Equality
 open import Proofs-Answers
-open import Proofs-Applied using
+open import Proofs-Applied-Answers using
     (Nat; zero; succ; _+_; zero-add; add-zero; add-succ; add-comm; zero-ne-succ)
 
 -- Supplied Unit 2 theorem: addition is associative.
@@ -205,7 +205,7 @@ nat-equality zero (succ n) = no (zero-ne-succ n)
 nat-equality (succ m) zero = no (succ-ne-zero m)
 nat-equality (succ m) (succ n) with nat-equality m n
 ... | yes refl = yes refl
-... | no not-equal = no λ x → not-equal (Proofs-Applied.succ-inj x)
+... | no not-equal = no λ x → not-equal (Proofs-Applied-Answers.succ-inj x)
 
 -- Normalize nat-equality 4 4 and nat-equality 4 5. Notice the proof or
 -- refutation stored inside each result, rather than just true or false.
